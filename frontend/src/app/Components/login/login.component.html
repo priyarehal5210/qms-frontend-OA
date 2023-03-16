@@ -11,7 +11,7 @@
         <div class="form-group row">
             <label for="Password" class="col-sm-4">Password</label>
             <div class="col-sm-8">
-                <input type="text" id="Password" name="Password" [(ngModel)]="loginUser.Password" placeholder="Password"class="form-control" (keydown)="clearPass()">
+                <input type="password" id="Password" name="Password" [(ngModel)]="loginUser.Password" placeholder="Password"class="form-control" (keydown)="clearPass()">
                 <p class="text-danger">{{passworderrormessage}}</p>
             </div>
         </div>   
