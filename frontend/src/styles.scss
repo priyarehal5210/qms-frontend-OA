@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+.head{
+    background-color: cadetblue;
+    color: cornsilk;
+    text-shadow: 1px 1px 2px ;
+    padding: 10px;
+    box-shadow: 2px 2px 4px lightgray;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.form{
+    background-color: rgba(245, 222, 179, 0.795);
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 2px 2px 4px lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form label{
+    // border: 2px solid ;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.form .modal-footer{
+    display: flex;
+    justify-content: center;
+}
+.table{
+    margin: auto;
+    // margin: auto;
+    box-shadow: 4px 4px 8px lightgray;
+    max-width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.table thead{
+    box-shadow: 2px 2px 3px cadetblue;
+    background-color:rgb(36, 3, 10);
+    text-align: center;
+    color:white;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+}
+.table tbody{
+    background-color: rgba(240, 235, 227, 0.37);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: capitalize;
+    color:rgb(2, 23, 24);
+}
+.table tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(245, 222, 179, 0.37);
+    transform: scale(1.01);
+    color: rebeccapurple;
+}
+.aprbtn{
+    background-color: rgb(36, 56, 7);
+    border: 0;
+    color: white;
+}
+.notaprbtn{
+    background-color: rgb(78, 7, 7);
+    border: 0;
+    color: white;
+}
+.btns{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btns button{
+    width: 10%;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    box-shadow: 2px 2px 4px cadetblue;
+    margin: 5px;
+}
+.btns button:hover{
+    background-color: cadetblue;
+    transform: scale(1.1);
+    color: white;
+}
+#goback{
+    background-color: rgb(66, 102, 11);
+    color: white;
+}

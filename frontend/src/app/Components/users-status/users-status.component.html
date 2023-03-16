@@ -1,0 +1,23 @@
+<h2 class="head">users status</h2>
+<table class="table table-striped table-active table-bordered">
+    <thead class="bg-info text-white">
+        <tr>
+            <th>UserName</th>
+            <th>TaskTitle</th>
+            <th>StartDate</th>
+            <th>success</th>
+            <th>hours</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of status">
+            <td >{{s.assignTasks.register.userName}}</td>
+            <td>{{s.assignTasks.tasks.name}}</td>
+            <td>{{s.assignTasks.tasks.startDate}}</td>
+            <td>{{s.success}}</td>
+            <td>{{s.hours}}</td>
+            <td>{{s.assignTasks.status}}</td>
+        </tr>
+    </tbody>
+</table>

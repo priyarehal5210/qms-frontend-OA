@@ -1,0 +1,37 @@
+
+<h3 class="head">register here</h3>
+<form class="form">
+    <div class="modal-body">
+        <div class="form-group row">
+            <label for="Username" class="col-sm-4">Username</label>
+            <div class="col-sm-8">
+                <input type="text" id="Username" name="Username" [(ngModel)]="newuser.userName" placeholder="Username"class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Email" class="col-sm-4">Email</label>
+            <div class="col-sm-8">
+                <input type="email" id="Email" name="Email" [(ngModel)]="newuser.email" placeholder="Email"class="form-control"(keydown)="clearemail()">
+                <p class="text-danger" >{{emailerromessage}}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Password" class="col-sm-4">Password</label>
+            <div class="col-sm-8">
+                <input type="text" id="Password" name="Password" [(ngModel)]="newuser.password" placeholder="Password"class="form-control">
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="ConfirmPassword" class="col-sm-4">ConfirmPassword</label>
+            <div class="col-sm-8">
+                <input type="text" id="ConfirmPassword" name="ConfirmPassword" [(ngModel)]="newuser.confirmPassword" placeholder="ConfirmPassword"class="form-control" (keypress)="passclear()">
+                <p class="text-danger">{{passworderrormessage}}</p>
+            </div>
+        </div>
+       </div>
+       <div class="modal-footer">
+        <button data-dismiss="modal"class=" btn btn-info"(click)="addUser()">register</button>
+        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger" data-dismiss="modal"(click)="clear()">Clear</button>
+      </div>
+</form>
