@@ -1,7 +1,5 @@
-import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Router, TitleStrategy } from '@angular/router';
-import { timer } from 'rxjs';
 import { Register } from 'src/app/Classes/register';
 import{RegisterService} from 'src/app/Services/register.service';
 import Swal from 'sweetalert2';

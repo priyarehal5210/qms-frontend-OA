@@ -1,13 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import jwtDecode from 'jwt-decode';
 import { AddSuccess, Status, Success } from 'src/app/Classes/register';
 import { RegisterService } from 'src/app/Services/register.service';
 import { SuccessService } from 'src/app/Services/success.service';
 import { TasksService } from 'src/app/Services/tasks.service';
-import { Workbook } from 'exceljs';
 import * as Xlsx from 'xlsx';
-import * as fs from 'file-saver';
 import { AssignTask } from 'src/app/Classes/assign-tasks';
 import Swal from 'sweetalert2';
 import { Router,NavigationEnd } from '@angular/router';
@@ -53,8 +50,6 @@ export class HomeComponent {
     this.regser.logged = true;
     this.gettasks();
     this.getallsuccess();
-    
- 
   }
   gettasks() {
     this.taskser.GetUsersWithTasks().subscribe((res) => {
@@ -103,22 +98,6 @@ export class HomeComponent {
       );
       console.log('meri success', this.particularsuccess);
     });
-  }
-  dateup() {
-    this.filterdadata = this.startedTask.find(
-      (x) => x.tasksId == this.taskIdis
-    ).tasks.endDate;
-    console.log('end date', this.filterdadata);
-    let userdate = this.usersuccessdata.date;
-    console.log('user date', userdate);
-
-    if (userdate > this.filterdadata) {
-      this.errorfordate = 'within start-date and end-date';
-      return;
-    } else {
-      this.errorfordate = '';
-      return;
-    }
   }
   savedata() {
     let userid: any = this.dataOfId.find(
@@ -170,7 +149,7 @@ export class HomeComponent {
           this.gettasks();
         });
       }
-      // //revoming task
+      this.clear();
       this.getallsuccess();
     });
   }
@@ -191,11 +170,26 @@ export class HomeComponent {
       this.getallsuccess();
     });
   }
+  dateup() {
+    this.filterdadata = this.startedTask.find(
+      (x) => x.tasksId == this.taskIdis
+    ).tasks.endDate;
+    console.log('end date', this.filterdadata);
+    let userdate = this.usersuccessdata.date;
+    console.log('user date', userdate);
+
+    if (userdate > this.filterdadata) {
+      this.errorfordate = 'within start-date and end-date';
+      return;
+    } else {
+      this.errorfordate = '';
+      return;
+    }
+  }
   subtask(e: any) {
     this.taskIdis = e;
     console.log('task id is', this.taskIdis);
   }
-
   export() {
     let element = document.getElementById('tbl');
     const ws: Xlsx.WorkSheet = Xlsx.utils.table_to_sheet(element);
@@ -212,5 +206,11 @@ export class HomeComponent {
       console.log(res);
       this.gettasks();
     });
+  }
+  clear(){
+    this.usersuccessdata.assignTasksId='';
+    this.usersuccessdata.date='';
+    this.usersuccessdata.hours='';
+    this.usersuccessdata.success='';
   }
 }

@@ -1,4 +1,4 @@
-<h2 class="head">Users with tasks</h2>
+<h2 class="head">assigned tasks</h2>
 <div class="btns">
     <button id="goback" (click)="back()">back</button>
     <button class="" data-toggle="modal" data-target="#modal">
@@ -44,7 +44,6 @@
                     <select [(ngModel)]="newdata" #user (change)="selectUser(user.value)">
                             <option *ngFor="let u of traineeUsers" [value]="u.id">{{u.userName}}</option>
                     </select>
-                    <!-- <input type="text" id="txtname" name="name" placeholder="Employee Name"class="form-control"> -->
                 </div>
             </div>
             <div class="form-group row">
@@ -53,10 +52,8 @@
                     <select [(ngModel)]="newdata" #task (change)="selectTask(task.value)">
                         <option *ngFor="let t of alltasks" [value]="t.id">{{t.name}}</option>
                     </select>
-                    <!-- <input type="number" id="txtsalary" name="salary" placeholder="Employee salary"class="form-control"> -->
                 </div>
             </div>
-         
            </div>
               <!-- footer -->
               <div class="modal-footer">
@@ -64,7 +61,6 @@
                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
               </div>
         </div>
-
         </div>
     </div>
 </form>

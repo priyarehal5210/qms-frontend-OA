@@ -19,7 +19,6 @@ export class TasksComponent {
   traineetask:any;
   newtask:Tasks=new Tasks();
   edittask:Tasks=new Tasks();
-
   constructor(private taskser:TasksService,private regser:RegisterService,private router:Router){}
 
   ngOnInit():void{
@@ -27,12 +26,16 @@ export class TasksComponent {
     this.getalltasks();
     this.getallusers();
   }
+  entername(event:any){
+    if(event.target.selectionStart==0 && event.code=='Space'){
+     event.preventDefault();
+    }
+  }
   getallusers(){
     this.regser.GetAllUsers().subscribe(res=>{
       this.users=res;
       this.traineeuser=this.users.filter(u=>u.role=="trainee");    
       console.log(this.traineeuser);
-      console.log(this.users);
     })
   }
   getalltasks(){
@@ -67,7 +70,6 @@ export class TasksComponent {
       timer: 1500  
     });  
     this.getalltasks();
-
   })
  }
  delete(e:any){
